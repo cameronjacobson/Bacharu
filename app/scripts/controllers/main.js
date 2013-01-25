@@ -1,7 +1,6 @@
 'use strict';
 
 BacharuApp.controller('MainCtrl', function($scope) {
-
 	$scope.links = [
 		'ACMPolicy',
 		'Console',
@@ -31,5 +30,4 @@ BacharuApp.controller('MainCtrl', function($scope) {
 		'VTPM',
 		'XSPolicy'
 	];
-
 });
