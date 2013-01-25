@@ -1,7 +1,19 @@
 {
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://packages.zendframework.com/"
+		}
+	],
+	"require": {
+		"zendframework/zend-xmlrpc": "2.0.*",
+		"silex/silex": "1.0.*@dev",
+		"twig/twig": "1.*"
+	},
 	"autoload": {
 		"psr-0": {
-			"Bacharu": "src/"
+			"Bacharu": "src/",
+			"Prajna": "vendor/prajna/Prajna/src/"
 		}
 	}
 }
