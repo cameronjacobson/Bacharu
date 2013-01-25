@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="FunazokoApp">
+    <body ng-app="BacharuApp" ng-controller="MainCtrl">
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -24,6 +24,10 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+		<div class="links">
+			<li ng-repeat="(key,value) in links" class="link"><a href="/{{ '{{' }}value | lowercase{{ '}}' }}/">{{ '{{' }}value{{ '}}' }}</a></li>
+		</div>
+
         <div class="container" ng-view></div>
 
         <script src="/components/angular/angular.min.js"></script>
@@ -31,6 +35,33 @@
         <!-- build:js scripts/scripts.js -->
         <script src="/scripts/app.js"></script>
         <script src="/scripts/controllers/main.js"></script>
+        <script src="/scripts/controllers/acmpolicy.js"></script>
+        <script src="/scripts/controllers/console.js"></script>
+        <script src="/scripts/controllers/crashdump.js"></script>
+        <script src="/scripts/controllers/debug.js"></script>
+        <script src="/scripts/controllers/dpci.js"></script>
+        <script src="/scripts/controllers/event.js"></script>
+        <script src="/scripts/controllers/host.js"></script>
+        <script src="/scripts/controllers/hostcpu.js"></script>
+        <script src="/scripts/controllers/hostmetrics.js"></script>
+        <script src="/scripts/controllers/network.js"></script>
+        <script src="/scripts/controllers/pbd.js"></script>
+        <script src="/scripts/controllers/pif.js"></script>
+        <script src="/scripts/controllers/pifmetrics.js"></script>
+        <script src="/scripts/controllers/ppci.js"></script>
+        <script src="/scripts/controllers/sr.js"></script>
+        <script src="/scripts/controllers/task.js"></script>
+        <script src="/scripts/controllers/user.js"></script>
+        <script src="/scripts/controllers/vbd.js"></script>
+        <script src="/scripts/controllers/vbdmetrics.js"></script>
+        <script src="/scripts/controllers/vdi.js"></script>
+        <script src="/scripts/controllers/vif.js"></script>
+        <script src="/scripts/controllers/vifmetrics.js"></script>
+        <script src="/scripts/controllers/vm.js"></script>
+        <script src="/scripts/controllers/vmguestmetrics.js"></script>
+        <script src="/scripts/controllers/vmmetrics.js"></script>
+        <script src="/scripts/controllers/vtpm.js"></script>
+        <script src="/scripts/controllers/xspolicy.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -47,6 +47,8 @@ else{
 	$app->abort(404, 'Not Found');
 }
 
+$app->register(new Silex\Provider\SessionServiceProvider());
+
 // configure hooks
 $app->before(function () use($app) {
 	$app['twig'] = function(){
@@ -54,16 +56,24 @@ $app->before(function () use($app) {
 	};
 	$app['config'] = parse_ini_file(__DIR__.'/config/config.ini',true);
 	$app['response'] = new Response();
-	$app['prajna'] = function() use($app) {
-		return new Prajna($app['config']['xapi']);
-	};
+	if($Prajna = $app['session']->get('PrajnaSession')){
+		$app['prajna'] = unserialize($Prajna);
+	}
+	else{
+		$app['prajna'] = function() use($app) {
+			return new Prajna($app['config']['xapi']);
+		};
+	}
 });
 
 $app->after(function () use($app) {
+	$app['session']->set('PrajnaSession',serialize($app['prajna']));
+error_log($app['session']->get('PrajnaSession'));
 	error_log('MEMORY USAGE: '.(memory_get_usage(true)/1024/1024).'M');
 });
 
 $app->error(function (\Exception $e, $code) use($app) {
+var_dump($e->getCode().' '.$e->getMessage());
 	$app['response']->setContent('blah');
 	return $app['response'];
 });

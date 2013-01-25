@@ -35,6 +35,8 @@ function getTwig(){
 	$loader = new Twig_Loader_Filesystem(dirname(__DIR__).'/src/Bacharu/Templates');
 	$twig = new Twig_Environment($loader, array(
 		'cache' => dirname(__DIR__).'/src/Bacharu/Templates/cache',
+		'auto_reload'=>true,
+		'debug'=>true
 	));
 	return $twig;
 }
