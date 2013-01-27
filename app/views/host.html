@@ -1,1 +1,34 @@
-host
+<h3>HOST</h3>
+<div ng-controller="HostCtrl">
+  <ul>
+    <li ng-repeat="(key,value) in hosts">{{value.name_label}} - {{value.uuid}}</li>
+  </ul>
+</div>
+<!--
+FYI Host SPEC
+
+string    uuid
+string    name/label
+string    name/description
+int       api_version_major
+int       api_version_minor
+string    api_version_vendor
+map       api_version_vendor_implementation
+bool      enabled
+map       software_version
+map       other_config
+set       capabilities
+map       cpu_configuration
+string    sched_policy
+set       supported_bootloaders
+set(refs) resident_VMs
+map       logging
+set(refs) PIFs
+ref       suspended_image_sr
+ref       crash-dump_sr
+set(refs) PBDs
+set(refs) PPCIs
+set(refs) host_CPUs
+ref       metrics
+
+-->

@@ -68,12 +68,10 @@ $app->before(function () use($app) {
 
 $app->after(function () use($app) {
 	$app['session']->set('PrajnaSession',serialize($app['prajna']));
-error_log($app['session']->get('PrajnaSession'));
 	error_log('MEMORY USAGE: '.(memory_get_usage(true)/1024/1024).'M');
 });
 
 $app->error(function (\Exception $e, $code) use($app) {
-var_dump($e->getCode().' '.$e->getMessage());
 	$app['response']->setContent('blah');
 	return $app['response'];
 });
