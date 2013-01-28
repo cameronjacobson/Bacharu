@@ -3,11 +3,12 @@
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top:10px;
 }
 .links .link {
 	display: inline-block;
 	list-style-type: none;
-	width: 100px;
+	width: 190px;
 }
 .container {
 	width: 960px;
@@ -15,3 +16,64 @@
 	margin-right: auto;
 	margin-top: 20px;
 }
+a {
+	text-decoration: none;
+}
+.menuhandle-container a {
+	color: #333;
+}
+.mainmenu-container li {
+	margin-top:5px;
+	vertical-align: top;
+}
+.mainmenu-container img {
+	margin-right: 5px;
+	width:16px;
+	margin-top:2px;
+}
+body {
+    margin:0px;
+	font-family: arial;
+	color:#333;
+}
+.mainmenu-container {
+    overflow:hidden;
+    position: fixed;
+    height:0px;
+    width:100%;
+    bottom:-1px;
+    -webkit-transition: height 500ms ease;
+    -moz-transition: height 500ms ease;
+    -o-transition: height 500ms ease;
+    -ms-transition: height 500ms ease;
+    transition: height 500ms ease;
+    border-top:1px solid #333;
+}
+.mainmenu-container a {
+	color:#333;
+	display:inline-block;
+	vertical-align:top;
+}
+.menuhandle-container {
+    display:block;
+    right:-1px;
+    height:20px;
+    bottom:-1px;
+    margin-bottom:-1px;
+    padding: 3px;
+    border: 1px solid #333;
+    border-top-left-radius: 8px;
+    position:fixed;
+    -webkit-transition: bottom 500ms ease;
+    -moz-transition: bottom 500ms ease;
+    -o-transition: bottom 500ms ease;
+    -ms-transition: bottom 500ms ease;
+    transition: bottom 500ms ease;
+}
+.menuhandle-container-up {
+    bottom: 200px;
+}
+.mainmenu-container-open {
+    height: 200px;
+}
+

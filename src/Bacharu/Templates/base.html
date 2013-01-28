@@ -22,15 +22,25 @@
             <script src="scripts/vendor/es5-shim.min.js"></script>
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
-<a href="/">REFRESH</a><br />
         <!-- Add your site or application content here -->
-		<div class="links">
-			<li ng-repeat="(key,value) in links" class="link"><a href="/{{ '{{' }}value | lowercase{{ '}}' }}/">{{ '{{' }}value{{ '}}' }}</a></li>
-		</div>
 
         <div class="container" ng-view></div>
 
         <script src="/components/angular/angular.min.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		function toggleMenu(){
+			if($('.mainmenu-container').hasClass('mainmenu-container-open')){
+				$('.mainmenu-container').removeClass('mainmenu-container-open');
+				$('.menuhandle-container').removeClass('menuhandle-container-up');
+			}
+			else{
+				$('.mainmenu-container').addClass('mainmenu-container-open');
+				$('.menuhandle-container').addClass('menuhandle-container-up');
+			}
+		}
+		</script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="/scripts/app.js"></script>
@@ -63,6 +73,17 @@
         <script src="/scripts/controllers/vtpm.js"></script>
         <script src="/scripts/controllers/xspolicy.js"></script>
         <!-- endbuild -->
+
+
+		<div class="menuhandle-container">
+			<a onclick="toggleMenu()" class="menuhandle">menu</a>
+		</div>
+		<div class="mainmenu-container">
+			<div class="links">
+				<li ng-repeat="(key,value) in links" class="link"><img ng-src="/img/bacharu-icons/16x16/{{ '{{' }}value{{ '}}' }}.png" /><a href="/{{ '{{' }}value | lowercase{{ '}}' }}/">{{ '{{' }}value{{ '}}' }}</a></li>
+			</div>
+<a onclick="document.location = '/';">REFRESH</a><br />
+		</div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
