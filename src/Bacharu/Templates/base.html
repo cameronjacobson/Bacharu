@@ -39,10 +39,12 @@
 			if($('.mainmenu-container').hasClass('mainmenu-container-open')){
 				$('.mainmenu-container').removeClass('mainmenu-container-open');
 				$('.menuhandle-container').removeClass('menuhandle-container-up');
+				$('body').css('padding-bottom','0px');
 			}
 			else{
 				$('.mainmenu-container').addClass('mainmenu-container-open');
 				$('.menuhandle-container').addClass('menuhandle-container-up');
+				$('body').css('padding-bottom','200px');
 			}
 		}
 		</script>
