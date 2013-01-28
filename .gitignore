@@ -1,2 +1,7 @@
 vendor
 composer.lock
+dist
+temp
+.sass-cache
+components
+bootstrap.css

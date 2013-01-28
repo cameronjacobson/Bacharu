@@ -9,11 +9,16 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="styles/bootstrap.css"/>
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
     <body ng-app="BacharuApp" ng-controller="MainCtrl">
-
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" onclick="document.location = '/';" href="#" style="padding-left:30px;">Bacharu</a>
+		</div>
+	</div>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -82,7 +87,6 @@
 			<div class="links">
 				<li ng-repeat="(key,value) in links" class="link"><img ng-src="/img/bacharu-icons/16x16/{{ '{{' }}value{{ '}}' }}.png" /><a href="/{{ '{{' }}value | lowercase{{ '}}' }}/">{{ '{{' }}value{{ '}}' }}</a></li>
 			</div>
-<a onclick="document.location = '/';">REFRESH</a><br />
 		</div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

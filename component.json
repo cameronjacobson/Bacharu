@@ -1,9 +1,10 @@
 {
   "author": "cameron jacobson",
   "name": "Bacharu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
-    "angular": "~1.0.4"
+    "angular": "~1.0.4",
+    "bootstrap": "~2.2.2"
   },
   "devDependencies": {}
 }
